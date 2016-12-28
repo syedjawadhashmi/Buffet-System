@@ -23,7 +23,7 @@ const PORT = 3000;
 //  LOADERS
 //---------------------------------------------------------
 const loaders = {
-  js: {test: /\.js$/, exclude: /node_modules/, loader: 'babel'},
+  js: {  test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel', query: {presets: ['es2015', 'react']}},
   scss: {test: /\.scss$/, loader: 'style!css!postcss!sass'}
 };
 
@@ -63,7 +63,7 @@ config.sassLoader = {
 //-------------------------------------
 if (ENV_DEVELOPMENT || ENV_PRODUCTION) {
   config.entry = {
-    main: ['./src/main.js']
+    main: ['./src/index.js']
   };
 
   config.output = {
