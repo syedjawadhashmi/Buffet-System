@@ -7,6 +7,7 @@ import { AppContainer } from 'react-hot-loader';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 //import { initAuth } from './core/auth';
 import configureStore from './store/store';
 import Root from './config/routes/routes';
@@ -20,9 +21,12 @@ const rootElement = document.getElementById('root');
 
     ReactDOM.render(
     <AppContainer>
-    <Root history={syncedHistory} store={store} />
-        </AppContainer>,
+        <MuiThemeProvider>
+            <Root history={syncedHistory} store={store} />
+        </MuiThemeProvider>
+    </AppContainer>,
         rootElement
+
 );
 
 

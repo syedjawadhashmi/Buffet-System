@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react'
 
-
+import Navbar from '../navbar/Navbar'
 
 // Tap Plugin
 import injectTapEventPlugin from 'react-tap-event-plugin'
@@ -16,7 +16,7 @@ export default class App extends Component {
     render () {
         return (
             <div>
-                <h1>welcome to React App</h1>
+                <Navbar/>
                 {this.props.children}
             </div>
         )

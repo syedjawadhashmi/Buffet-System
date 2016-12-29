@@ -9,7 +9,6 @@
   },
   "repository": {
     "type": "git",
-
     "url": "git+https://github.com/syedjawadhashmi/ES-OX-REACT.git"
   },
   "author": "S jawwad yousuf",
@@ -19,20 +18,21 @@
   },
   "homepage": "https://github.com/syedjawadhashmi/ES-OX-REACT#readme",
   "dependencies": {
+    "babel-polyfill": "~6.13.0",
+    "classnames": "~2.2.5",
+    "firebase": "~3.4.0",
+    "immutable": "~3.8.1",
     "material-ui": "0.15.4",
     "react": "~15.3.2",
     "react-dom": "~15.3.2",
     "react-redux": "~4.4.5",
     "react-router": "~2.8.1",
     "react-router-redux": "~4.0.6",
-    "redux": "~3.6.0",
-    "redux-thunk": "~2.1.0",
-    "reselect": "~2.5.4",
-    "babel-polyfill": "~6.13.0",
-    "classnames": "~2.2.5",
-    "immutable": "~3.8.1",
     "react-tap-event-plugin": "^1.0.0",
-    "firebase": "~3.4.0"
+    "redux": "~3.6.0",
+    "redux-logger": "^2.7.4",
+    "redux-thunk": "~2.1.0",
+    "reselect": "~2.5.4"
   },
   "devDependencies": {
     "autoprefixer": "~6.4.1",
