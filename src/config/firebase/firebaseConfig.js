@@ -5,10 +5,10 @@ import firebase from 'firebase';
 
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyBsVVpEDrlNPEmshLcmOuE0FxhjPn0AqMg',
-    authDomain: 'todo-react-redux.firebaseapp.com',
-    databaseURL: 'https://todo-react-redux.firebaseio.com',
-    storageBucket: 'firebase-todo-react-redux.appspot.com'
+    apiKey: 'AIzaSyD44wTP7R7E7q6Q1xQve8EbsuNz26fbWLM',
+    authDomain: 'sj-react-2c532.firebaseapp.com',
+    databaseURL: 'https://sj-react-2c532.firebaseio.com',
+    storageBucket: 'sj-react-2c532.appspot.com'
 };
 
 

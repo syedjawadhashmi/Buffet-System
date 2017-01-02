@@ -1,0 +1,23 @@
+
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-bottom: 120px;
+  background-color: red;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hide {
+  display: none !important;
+}
+
+::selection {
+  background: rgba(200,200,255,.1);
+}

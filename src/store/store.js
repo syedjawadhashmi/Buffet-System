@@ -5,13 +5,13 @@
 
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import reducers from '../reducers/reducer';
+import reducers from '../reducers';
 
 
 export default (initialState = {}) => {
     let middleware = applyMiddleware(thunk);
 
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.NODE_ENV !== 'production.') {
         // configure redux-devtools-extension
         // @see https://github.com/zalmoxisus/redux-devtools-extension
         const devToolsExtension = window.devToolsExtension;
@@ -22,8 +22,8 @@ export default (initialState = {}) => {
     const store = createStore(reducers, initialState, middleware);
 
     if (module.hot) {
-        module.hot.accept('../reducers/reducer', () => {
-            store.replaceReducer(require('../reducers/reducer').default);
+        module.hot.accept('../reducers', () => {
+            store.replaceReducer(require('../reducers').default);
         });
     }
 

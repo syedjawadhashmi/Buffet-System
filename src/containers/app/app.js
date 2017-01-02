@@ -1,7 +1,7 @@
 /**
  * Created by Admin on 12/28/2016.
  */
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 
 import Navbar from '../navbar/Navbar'
 
@@ -10,6 +10,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
 export default class App extends Component {
+
+
 
 
 
