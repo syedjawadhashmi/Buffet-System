@@ -24,7 +24,7 @@ const PORT = 3000;
 //---------------------------------------------------------
 const loaders = {
   js: {  test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel'},
- scss: {test: /\.css$/, loader: '"style-loader!css-loader!postcss!sass'}
+ scss: {test: /\.scss$/, loader: 'style!css!postcss!sass'}
 };
 
 
@@ -36,7 +36,7 @@ module.exports = config;
 
 
 config.resolve = {
-  extensions: ['', '.js','.scss','.css'],
+  extensions: ['', '.js','.scss'],
   modulesDirectories: ['node_modules'],
   root: path.resolve('.')
 };
@@ -130,6 +130,7 @@ if (ENV_DEVELOPMENT) {
 }
 
 
+/*
  //=====================================
  //  PRODUCTION
  //-------------------------------------
@@ -181,3 +182,4 @@ if (ENV_DEVELOPMENT) {
  ]
  };
  }
+ */

@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
-
+import style from './signinform.scss';
 
 const buttonStyle = { width: '100%' }
 const fieldStyle = { width: '80%' }
