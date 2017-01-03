@@ -20,7 +20,7 @@ export const authReducer = function (state = InitalState, action) {
     case SIGN_IN_ERROR:
       return Object.assign({}, state, { isLoading: false, isLoggedin: false, user: null });
     case SIGN_IN_SUCCESS:
-      return Object.assign({}, state, { isLoading: false, isLoggedin: true, user: action });
+      return Object.assign({}, state, { isLoading: false, isLoggedin: true, user: action.payload });
     case SIGN_OUT_ERROR:
       return Object.assign({}, state, { isLoading: false, isLoggedin: false, user: null });
     case SIGN_OUT_SUCCESS:

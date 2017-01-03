@@ -8,6 +8,7 @@ import CircularProgress from 'material-ui/CircularProgress'
 import Snackbar from 'material-ui/Snackbar'
 import RaisedButton from 'material-ui/RaisedButton'
 
+import {browserHistory} from 'react-router';
 // redux/firebase
 import { connect } from 'react-redux'
 
@@ -22,20 +23,19 @@ class signin extends Component {
 
  // Redirect when logged in
   componentWillReceiveProps (nextProps) {
-  console.log(nextProps)
-  // const { router } = this.context;
-  //   const { auth } = this.props;
-
-  //   if (auth.authenticated && !nextProps.auth.authenticated) {
-  //     router.replace(paths.SIGN_IN);
-  //   }
-  //   else if (!auth.authenticated && nextProps.auth.authenticated) {
-  //     router.replace(paths.TASKS);
-  //   }
+  //console.log(nextProps)
+    const { auth } = this.props;
+    if (auth.isLoggedin && !nextProps.auth.auth.isLoggedin) {
+     browserHistory.push('/signin')
+    }
+    else if (!auth.isLoggedin && nextProps.auth.auth.isLoggedin) {
+     browserHistory.push('/user/'+nextProps.auth.auth.user.uid);
+    }
   }
 
   handleLogin = (loginData) => {
     this.props.signInWithCustom(loginData)
+    // browserHistory.push('/user')
   }
 
 
@@ -60,7 +60,7 @@ class signin extends Component {
 
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  //console.log(state)
 	return { auth: state };
 };
 

@@ -10,7 +10,26 @@ import App from '../../containers/app/app'
 import Home from '../../containers/home/home'
 import signup from '../../containers/signup/signup'
 import signin from '../../containers/signin/signin'
+import userhome from '../../containers/userhome/userhome'
+import user from '../../containers/user/user'
 
+
+const requireAuth = (nextState, replace) => {
+    // if (!auth.isAdmin()) {
+    //     // Redirect to Home page if not an Admin
+    //     replace({ pathname: '/' })
+    // }
+
+   // console.log (nextState)
+}
+
+
+
+
+ //  <Route path='user' component={userhome} onEnter={requireAuth} >
+        //     <Route path=":userid" component={user} data={data}/>
+        //     <Route path=":groupid" component={group} data={data}/>
+        // </Route>
 export default function Root({history, store}) {
     return (
 <Provider store={store}>
@@ -18,7 +37,10 @@ export default function Root({history, store}) {
      <Route path='/' component={App}>
         <IndexRoute component={Home} />
         <Route path='signup' component={signup} />
-        <Route path='signin' component={signin} />
+         <Route path='signin' component={signin} />
+         <Route path='' component={userhome} onEnter={requireAuth}>
+              <Route path="user/:userid" component={user}/>
+         </Route>
     </Route>
   </Router>
  </Provider>

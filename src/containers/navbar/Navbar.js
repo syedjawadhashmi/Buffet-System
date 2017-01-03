@@ -6,6 +6,7 @@ import {browserHistory} from 'react-router';
 // ...
 
 // Components
+import Drawer from 'material-ui/Drawer';
 import AppBar from 'material-ui/AppBar'
 import IconMenu from 'material-ui/IconMenu'
 import MenuItem from 'material-ui/MenuItem'
@@ -16,12 +17,20 @@ const buttonStyle = { color: 'white' }
 export default class Navbar extends Component {
 
 
+    state = {
+        open: false
+    }
+
+
+    handleToggle = () => this.setState({open: !this.state.open});
+    handleClose = () => this.setState({open: false});
+
 
 
   render () {
-      const {router } = this.props
- const mainMenu = (
-      <div className='Navbar-Main-Menu'>
+
+      const mainMenu = (
+      <div className='Navbar-Main-Menu' >
         <FlatButton
           label='Sign Up'
           style={buttonStyle}
@@ -37,7 +46,7 @@ export default class Navbar extends Component {
 
 
 
-    return (
+   /* return (
       <AppBar
       title={
           <Link to='/' style={buttonStyle}>
@@ -47,6 +56,23 @@ export default class Navbar extends Component {
         className='Navbar'
         iconElementRight={mainMenu}
       />
-    )
+    )*/
+
+      return(
+          <div>
+
+          <AppBar title="Sj IQ" className='Navbar' iconElementRight={mainMenu}  onLeftIconButtonTouchTap={this.handleToggle} />
+          <Drawer
+              width={300}
+              open={this.state.open}
+              openSecondary={true}>
+              <AppBar title="NavBar" />
+              <MenuItem onTouchTap={this.handleClose}>Menu Item 1</MenuItem>
+              <MenuItem onTouchTap={this.handleClose}>Menu Item 2</MenuItem>
+              <MenuItem onTouchTap={this.handleClose}>Menu Item 3</MenuItem>
+          </Drawer>
+          </div>
+      )
+
   }
 }

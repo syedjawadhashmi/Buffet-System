@@ -21,7 +21,7 @@
   min-width: 192px;
   margin-top: 1.5rem;
   text-align: center;
-  color: $linkBlue;
+  color: blue;
   align-items: center;
   flex-direction: column;
 }
@@ -45,7 +45,7 @@
 .LoginForm-Recover-Link {
   display: inline;
   font-size: .8rem;
-  color: $linkBlue;
+  color: blue;
 }
 .LoginForm-Recover-Link:hover {
   text-decoration: underline;
